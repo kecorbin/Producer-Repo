@@ -13,15 +13,6 @@ resource "tfe_team" "ops" {
   organization = "${var.org}"
 }
 
-resource "tfe_team_member" "dev-user" {
-  team_id  = "${tfe_team.developers.id}"
-  username = "dev-user"
-}
-
-resource "tfe_team_member" "ops-user" {
-  team_id  = "${tfe_team.ops.id}"
-  username = "ops-user"
-}
 
 resource "tfe_team_access" "development-dev" {
   access       = "admin"
